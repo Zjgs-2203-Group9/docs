@@ -1,26 +1,26 @@
 <template>
   <view
-    class="my-uni-app-body"
-    :style="{ minHeight: `${mainHeight}px`, background: '#f8f8f8!important' }"
+      class="my-uni-app-body"
+      :style="{ minHeight: `${mainHeight}px`, background: '#f8f8f8!important' }"
   >
     <u-navbar
-      :title="
+        :title="
         noteInfo
           ? `单词本——${noteInfo.name}`
           : wordInfo
           ? wordInfo.name
           : '错误单词'
       "
-      :bgColor="color"
-      placeholder
-      @leftClick="gotoIndex"
+        :bgColor="color"
+        placeholder
+        @leftClick="gotoIndex"
     ></u-navbar>
     <view style="padding: 20px 10px 0 10px">
       <u-row :gutter="20" v-if="!isNote || (isNote !== 1 && isNote !== 2)">
         <u-col v-for="(i, index) in fixedTypeList" :span="4" :key="index">
           <view
-            @click="doGetWords(i.value)"
-            :style="{
+              @click="doGetWords(i.value)"
+              :style="{
               background: type2 == i.value ? '' : color,
               borderRadius: '24px',
               padding: '5px',
@@ -36,43 +36,43 @@
       </u-row>
       <view style="margin: 10px 0 10px 0">
         <u-search
-          placeholder="输入单词"
-          v-model="keyword"
-          height="60"
-          :size="size"
-          @search="search"
-          @custom="search"
+            placeholder="输入单词"
+            v-model="keyword"
+            height="60"
+            :size="size"
+            @search="search"
+            @custom="search"
         ></u-search
-      ></view>
+        ></view>
       <u-row :gutter="20">
         <u-col :span="6">
           <u-button
-            type="primary"
-            icon="edit-pen"
-            shape="circle"
-            :size="size"
-            @click="gotoWordDetails"
-            :disabled="!dataList || dataList.length <= 0"
-            >前去默写单词</u-button
+              type="primary"
+              icon="edit-pen"
+              shape="circle"
+              :size="size"
+              @click="gotoWordDetails"
+              :disabled="!dataList || dataList.length <= 0"
+          >前去默写单词</u-button
           >
         </u-col>
         <u-col :span="6">
           <u-button
-            type="success"
-            icon="grid"
-            shape="circle"
-            @click="gotoWordDetails1"
-            :disabled="!dataList || dataList.length <= 0"
-            >前去记忆单词</u-button
+              type="success"
+              icon="grid"
+              shape="circle"
+              @click="gotoWordDetails1"
+              :disabled="!dataList || dataList.length <= 0"
+          >前去记忆单词</u-button
           >
         </u-col>
       </u-row>
     </view>
     <view style="padding: 20px 5px 0 5px">
       <view
-        v-for="(i, index) in showDataList"
-        :key="index"
-        style="
+          v-for="(i, index) in showDataList"
+          :key="index"
+          style="
           margin-bottom: 10px;
           background: #ffff;
           min-height: 50px;
@@ -88,7 +88,7 @@
               </text>
             </view>
             <view
-              ><text style="color: #ababab; font-size: 14px">{{
+            ><text style="color: #ababab; font-size: 14px">{{
                 i.word_meaning
               }}</text></view
             >
@@ -97,7 +97,7 @@
             <u-row :gutter="5" v-if="isNote && isNote == 1">
               <u-col :span="6">
                 <view
-                  ><text style="font-size: 15px; color: #ababab">{{
+                ><text style="font-size: 15px; color: #ababab">{{
                     i.word_pronunciation
                   }}</text></view
                 ></u-col
@@ -106,28 +106,28 @@
               <u-col :span="3">
                 <view @click="playShenyin(i.word_name)">
                   <img
-                    style="width: 20px; height: 20px; vertical-align: middle"
-                    class="word-sheng"
-                    src="https://itlifetime.com/resources/xiaochengxu/声音.png" /></view
-              ></u-col>
+                      style="width: 20px; height: 20px; vertical-align: middle"
+                      class="word-sheng"
+                      src="https://itlifetime.com/resources/xiaochengxu/声音.png" /></view
+                ></u-col>
               <u-col :span="3">
                 <view @click="cancelCollectWords(i.word_name, index)">
                   <img
-                    style="width: 20px; height: 20px; vertical-align: middle"
-                    class="word-sheng"
-                    src="https://itlifetime.com/resources/xiaochengxu/爱心.png" /></view
-              ></u-col>
+                      style="width: 20px; height: 20px; vertical-align: middle"
+                      class="word-sheng"
+                      src="https://itlifetime.com/resources/xiaochengxu/爱心.png" /></view
+                ></u-col>
             </u-row>
             <u-row :gutter="5" v-else>
               <u-col :span="9">
                 <view
-                  ><text style="font-size: 15px; color: #ababab">{{
+                ><text style="font-size: 15px; color: #ababab">{{
                     i.word_pronunciation
                   }}</text></view
                 ></u-col
               ><u-col :span="3">
-                <view @click="playShenyin(i.word_name)">
-                  <img
+              <view @click="playShenyin(i.word_name)">
+                <img
                     style="width: 20px; height: 20px; vertical-align: middle"
                     class="word-sheng"
                     src="https://itlifetime.com/resources/xiaochengxu/声音.png" /></view
@@ -148,10 +148,10 @@
     </view>
     <view>
       <u-popup
-        :show="show"
-        @close="show = false"
-        @open="show = true"
-        mode="bottom"
+          :show="show"
+          @close="show = false"
+          @open="show = true"
+          mode="bottom"
       >
         <!-- 默写设置，默写多少个，随机抽查还是默认顺序，单个单词默写时长-->
         <view class="word-set">
@@ -164,7 +164,7 @@
             /> -->
             <view>
               <tetxt style="font-size: 12px; color: #ababab; margin-bottom: 8px"
-                >单词个数(当前词量：{{ sourceDataList.length }})：</tetxt
+              >单词个数(当前词量：{{ sourceDataList.length }})：</tetxt
               >
             </view>
 
@@ -177,11 +177,11 @@
             ></u--input> -->
 
             <u-number-box
-              :min="2"
-              integer
-              inputWidth="70px"
-              :max="sourceDataList.length > 20 ? 20 : sourceDataList.length"
-              v-model="wordSet.num"
+                :min="2"
+                integer
+                inputWidth="70px"
+                :max="sourceDataList.length > 20 ? 20 : sourceDataList.length"
+                v-model="wordSet.num"
             ></u-number-box>
           </view>
 
@@ -191,60 +191,60 @@
             </view>
 
             <view
-              style="
+                style="
                 background: #fff;
                 margin-top: 5px;
                 padding: 5px;
                 border-radius: 5px;
                 line-height: 40px;
               "
-              :style="{
+                :style="{
                 border:
                   wordSet.wordRandom == '顺序' ? `1px solid ${color}` : '',
               }"
             >
               <u-radio-group
-                v-model="wordSet.wordRandom"
-                iconSize="15px"
-                size="15px"
-                :activeColor="color"
-                iconPlacement="right"
-                placement="column"
+                  v-model="wordSet.wordRandom"
+                  iconSize="15px"
+                  size="15px"
+                  :activeColor="color"
+                  iconPlacement="right"
+                  placement="column"
               >
                 <u-radio
-                  label="顺序"
-                  name="顺序"
-                  :labelSize="labelSize"
+                    label="顺序"
+                    name="顺序"
+                    :labelSize="labelSize"
                 ></u-radio>
               </u-radio-group>
             </view>
             <view
-              style="
+                style="
                 margin-top: 10px;
                 background: #fff;
                 padding: 5px;
                 border-radius: 5px;
               "
-              :style="{
+                :style="{
                 border:
                   wordSet.wordRandom == '随机' ? `1px solid ${color}` : '',
               }"
             >
               <u-radio-group
-                v-model="wordSet.wordRandom"
-                iconSize="15px"
-                size="15px"
-                :activeColor="color"
-                iconPlacement="right"
-                placement="column"
+                  v-model="wordSet.wordRandom"
+                  iconSize="15px"
+                  size="15px"
+                  :activeColor="color"
+                  iconPlacement="right"
+                  placement="column"
               >
                 <u-radio
-                  style="margin-top: 20px"
-                  label="随机"
-                  name="随机"
-                  :labelSize="labelSize"
+                    style="margin-top: 20px"
+                    label="随机"
+                    name="随机"
+                    :labelSize="labelSize"
                 ></u-radio> </u-radio-group
-            ></view>
+              ></view>
           </view>
 
           <view style="margin-top: 30px" v-if="isWrite">
@@ -253,65 +253,65 @@
             </view>
 
             <view
-              style="
+                style="
                 background: #fff;
                 margin-top: 5px;
                 padding: 5px;
                 border-radius: 5px;
                 line-height: 40px;
               "
-              :style="{
+                :style="{
                 border:
                   wordSet.wordDir == '中文→英文' ? `1px solid ${color}` : '',
               }"
             >
               <u-radio-group
-                v-model="wordSet.wordDir"
-                iconSize="15px"
-                size="15px"
-                :activeColor="color"
-                iconPlacement="right"
-                placement="column"
+                  v-model="wordSet.wordDir"
+                  iconSize="15px"
+                  size="15px"
+                  :activeColor="color"
+                  iconPlacement="right"
+                  placement="column"
               >
                 <u-radio
-                  label="中文→英文"
-                  name="中文→英文"
-                  :labelSize="labelSize"
+                    label="中文→英文"
+                    name="中文→英文"
+                    :labelSize="labelSize"
                 ></u-radio>
               </u-radio-group>
             </view>
             <view
-              style="
+                style="
                 margin-top: 10px;
                 background: #fff;
                 padding: 5px;
                 border-radius: 5px;
               "
-              :style="{
+                :style="{
                 border:
                   wordSet.wordDir == '英文→中文' ? `1px solid ${color}` : '',
               }"
             >
               <u-radio-group
-                v-model="wordSet.wordDir"
-                iconSize="15px"
-                size="15px"
-                :activeColor="color"
-                iconPlacement="right"
-                placement="column"
+                  v-model="wordSet.wordDir"
+                  iconSize="15px"
+                  size="15px"
+                  :activeColor="color"
+                  iconPlacement="right"
+                  placement="column"
               >
                 <u-radio
-                  style="margin-top: 20px"
-                  label="英文→中文"
-                  name="英文→中文"
-                  :labelSize="labelSize"
+                    style="margin-top: 20px"
+                    label="英文→中文"
+                    name="英文→中文"
+                    :labelSize="labelSize"
                 ></u-radio> </u-radio-group
-            ></view>
+              ></view>
           </view>
 
           <view style="margin-top: 10px; background: #fff">
             <u-button type="primary" @click="doGotoWordDetails" shape="circle"
-              >设置好了</u-button
+            >设置好了</u-button
             >
           </view>
         </view>
@@ -340,15 +340,15 @@ export default {
       keyword: "",
       user: "",
       fixedTypeList: [
-        { name: "基础篇", value: 0 },
-        { name: "核心篇", value: 1 },
-        { name: "进阶篇", value: 2 },
+        {name: "基础篇", value: 0},
+        {name: "核心篇", value: 1},
+        {name: "进阶篇", value: 2},
       ],
       type2: 0,
       isNote: 0,
       noteInfo: "",
       wordInfo: "",
-      page: { startPage: 1, pageSize: 10 },
+      page: {startPage: 1, pageSize: 10},
     };
   },
   onLoad() {
@@ -447,9 +447,9 @@ export default {
       this.sourceDataList = dataList;
       //默认只显示前10个，否则太卡
       let size =
-        dataList.length > this.page.pageSize
-          ? this.page.pageSize
-          : dataList.length;
+          dataList.length > this.page.pageSize
+              ? this.page.pageSize
+              : dataList.length;
       for (let i = 0; i < size; i++) {
         this.showDataList.push(this.sourceDataList[i]);
       }
@@ -462,46 +462,25 @@ export default {
     },
 
     getWords() {
-      const data = require("./words.json");
-      this.initWords(data.extra);
-      wx.setStorageSync("totalwordList", JSON.stringify(data.extra));
-      setTimeout(() => {
-        wx.hideLoading({
-          success: (res) => {},
-        });
-      }, 200);
+      let http = `${common_http}/words/collect?type=${this.type2}`;
 
-      // let http = common_http + "/getWords";
-      // let params = {};
-      // params.ephemeralParam = this.wordInfo.type;
-      // params.ephemeralParam1 = this.type2;
-      // let _this = this;
-      // wx.showLoading({
-      //   title: "单词加载中",
-      //   mask: true,
-      //   success(res) {
-      //     console.log(res);
-      //   },
-      // });
-      // wx.request({
-      //   method: "post",
-      //   url: http,
-      //   data: {
-      //     params: JSON.stringify(params),
-      //   },
-      //   header: {
-      //     "content-type": "application/x-www-form-urlencoded",
-      //   },
-      //   success(res) {
-      //     _this.initWords(res.data.extra);
-      //     wx.setStorageSync("totalwordList", JSON.stringify(res.data.extra));
-      //     setTimeout(() => {
-      //       wx.hideLoading({
-      //         success: (res) => {},
-      //       });
-      //     }, 200);
-      //   },
-      // });
+      wx.showLoading({title: "加载中"});
+      wx.request({
+        method: "GET",  // 改为 GET
+        url: http,
+        success: (res) => {
+          if (res.data.code === 1) { // 注意 code=1 表示成功
+            this.initWords(res.data.extra);
+            wx.setStorageSync("totalwordList", JSON.stringify(res.data.extra));
+          }
+        },
+        fail: (err) => {
+          wx.showToast({title: "请求失败", icon: "none"});
+        },
+        complete: () => {
+          wx.hideLoading();
+        }
+      });
     },
 
     getWordSet() {
@@ -519,7 +498,7 @@ export default {
     gotoWordDetails() {
       this.show = true;
       this.wordSet.num =
-        this.sourceDataList.length > 20 ? 20 : this.sourceDataList.length;
+          this.sourceDataList.length > 20 ? 20 : this.sourceDataList.length;
       this.isWrite = true;
     },
     search() {
@@ -568,7 +547,7 @@ export default {
     },
 
     getCollectWords(type) {
-      let http = common_http + "/getCollectWords";
+      let http = common_http + "/words/getCollectWords";
       let params = {};
       params.ephemeralParam = type;
       params.ephemeralParam1 = this.user.id;
@@ -601,6 +580,7 @@ export default {
 .word-sheng:active {
   transform: scale(2); /* 缩放图片 */
 }
+
 .word-set {
   height: 400px;
   padding: 20px;
