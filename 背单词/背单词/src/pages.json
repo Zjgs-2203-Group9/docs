@@ -1,0 +1,75 @@
+{
+  "easycom": {
+    "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+  },
+
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+
+    {
+      "path": "pages/beiwords/beiwords",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "navigationStyle": "custom" //去掉头
+      }
+    },
+    {
+      "path": "pages/beiwords2/scoreList",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "navigationStyle": "custom" //去掉头
+      }
+    },
+    {
+      "path": "pages/beiwords/wordNote",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "navigationStyle": "custom" //去掉头
+      }
+    },
+    {
+      "path": "pages/beiwords/translate",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "navigationStyle": "custom" //去掉头
+      }
+    },
+    {
+      "path": "pages/beiwords/total",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "enablePullDownRefresh": true,
+
+        "navigationStyle": "custom" //去掉头
+      }
+    },
+    {
+      "path": "pages/beiwords1/wordNoteList",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "navigationStyle": "custom" //去掉头
+      }
+    },
+    {
+      "path": "pages/beiwords1/wordSelect",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "navigationStyle": "custom" //去掉头
+      }
+    },
+    {
+      "path": "pages/beiwords1/words",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "navigationStyle": "custom" //去掉头
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "lazyCodeLoading": "requiredComponents"
+}

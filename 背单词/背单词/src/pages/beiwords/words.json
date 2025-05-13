@@ -1,0 +1,1517 @@
+{
+  "code": 0,
+  "message": "操作成功",
+  "page": null,
+  "extra": [
+    {
+      "word_name": "program",
+      "word_pronunciation": "[prəʊɡræm]",
+      "word_meaning": "n.节目"
+    },
+    {
+      "word_name": "above",
+      "word_pronunciation": "[ə'bʌv]",
+      "word_meaning": "prep.在...上方"
+    },
+    {
+      "word_name": "America",
+      "word_pronunciation": "[ə'merɪkə]",
+      "word_meaning": "n.美国"
+    },
+    {
+      "word_name": "into",
+      "word_pronunciation": "[ɪntʊ]",
+      "word_meaning": "prep.到……里面"
+    },
+    {
+      "word_name": "almost",
+      "word_pronunciation": "[ɔːlməʊst]",
+      "word_meaning": "adv.几乎"
+    },
+    {
+      "word_name": "cook",
+      "word_pronunciation": "[kʊk]",
+      "word_meaning": "v.烹饪，煮"
+    },
+    {
+      "word_name": "yours",
+      "word_pronunciation": "[jʊrz]",
+      "word_meaning": "pron.你的"
+    },
+    {
+      "word_name": "color",
+      "word_pronunciation": "[kʌlə]",
+      "word_meaning": "n.颜色"
+    },
+    {
+      "word_name": "as",
+      "word_pronunciation": "[əz]",
+      "word_meaning": "prep.当做"
+    },
+    {
+      "word_name": "through",
+      "word_pronunciation": "[θruː]",
+      "word_meaning": "prep.通过"
+    },
+    {
+      "word_name": "door",
+      "word_pronunciation": "[dɔː]",
+      "word_meaning": "n.门"
+    },
+    {
+      "word_name": "empty",
+      "word_pronunciation": "[empti]",
+      "word_meaning": "adj.空的"
+    },
+    {
+      "word_name": "what",
+      "word_pronunciation": "[wɒt]",
+      "word_meaning": "pron.什么"
+    },
+    {
+      "word_name": "anger",
+      "word_pronunciation": "[ˈæŋɡə]",
+      "word_meaning": "n.愤怒"
+    },
+    {
+      "word_name": "or",
+      "word_pronunciation": "[ɔː]",
+      "word_meaning": "conj.或者"
+    },
+    {
+      "word_name": "twenty",
+      "word_pronunciation": "[twenti]",
+      "word_meaning": "num.二十"
+    },
+    {
+      "word_name": "bright",
+      "word_pronunciation": "[braɪt]",
+      "word_meaning": "adj.明亮的"
+    },
+    {
+      "word_name": "winter",
+      "word_pronunciation": "[wɪntə]",
+      "word_meaning": "n.冬季"
+    },
+    {
+      "word_name": "actually",
+      "word_pronunciation": "[æktʃuːəli]",
+      "word_meaning": "adv.实际上"
+    },
+    {
+      "word_name": "animal",
+      "word_pronunciation": "[ænɪməl]",
+      "word_meaning": "n.动物"
+    },
+    {
+      "word_name": "be动词",
+      "word_pronunciation": "/",
+      "word_meaning": "变形 is, are, was, were, be, been"
+    },
+    {
+      "word_name": "backyard",
+      "word_pronunciation": "[ˌbækˈjɑːrd]",
+      "word_meaning": "n.后院"
+    },
+    {
+      "word_name": "banking",
+      "word_pronunciation": "[ˈbæŋkɪŋ]",
+      "word_meaning": "n.银行业务"
+    },
+    {
+      "word_meaning": "n.英格兰",
+      "word_name": "England",
+      "word_pronunciation": "[ɪŋɡlənd]"
+    },
+    {
+      "word_meaning": "pron.他自己",
+      "word_name": "himself",
+      "word_pronunciation": "[hɪm'self]"
+    },
+    {
+      "word_meaning": "n.工厂",
+      "word_name": "factory",
+      "word_pronunciation": "[fæktri]"
+    },
+    {
+      "word_meaning": "n.星期五",
+      "word_name": "Friday",
+      "word_pronunciation": "[ˈfraɪdeɪ]"
+    },
+    {
+      "word_meaning": "adv.不管怎样",
+      "word_name": "whatever",
+      "word_pronunciation": "[wɒt'evə]"
+    },
+    {
+      "word_meaning": "conj.如何",
+      "word_name": "how",
+      "word_pronunciation": "[haʊ]"
+    },
+    {
+      "word_meaning": "v.横过",
+      "word_name": "cross",
+      "word_pronunciation": "[krɒs]"
+    },
+    {
+      "word_meaning": "n.女孩",
+      "word_name": "girl",
+      "word_pronunciation": "[ɡɜːl]"
+    },
+    {
+      "word_meaning": "n.小时",
+      "word_name": "hour",
+      "word_pronunciation": "[ˈaʊər]"
+    },
+    {
+      "word_meaning": "conj.在……期间",
+      "word_name": "while",
+      "word_pronunciation": "[waɪl]"
+    },
+    {
+      "word_meaning": "n.银行",
+      "word_name": "bank",
+      "word_pronunciation": "[bæŋk]"
+    },
+    {
+      "word_meaning": "int.再见",
+      "word_name": "goodbye",
+      "word_pronunciation": "[ɡʊd'baɪ]"
+    },
+    {
+      "word_meaning": "conj.虽然",
+      "word_name": "though",
+      "word_pronunciation": "[ðəʊ]"
+    },
+    {
+      "word_meaning": "adj.不同的",
+      "word_name": "different",
+      "word_pronunciation": "[ˈdɪfrənt]"
+    },
+    {
+      "word_meaning": "adj.大的",
+      "word_name": "big",
+      "word_pronunciation": "[bɪɡ]"
+    },
+    {
+      "word_meaning": "pron.他们",
+      "word_name": "they",
+      "word_pronunciation": "[ðeɪ]"
+    },
+    {
+      "word_meaning": "v.建议",
+      "word_name": "advise",
+      "word_pronunciation": "[ədˈvaɪz]"
+    },
+    {
+      "word_meaning": "n.教师",
+      "word_name": "teacher",
+      "word_pronunciation": "[tiːtʃə]"
+    },
+    {
+      "word_meaning": "pron.我自己",
+      "word_name": "myself",
+      "word_pronunciation": "[maɪ'self]"
+    },
+    {
+      "word_meaning": "adj.危险的",
+      "word_name": "dangerous",
+      "word_pronunciation": "[ˈdeɪndʒərəs]"
+    },
+    {
+      "word_meaning": "n.妻子",
+      "word_name": "wife",
+      "word_pronunciation": "[waɪf]"
+    },
+    {
+      "word_meaning": "n.包，袋",
+      "word_name": "bag",
+      "word_pronunciation": "[bæɡ]"
+    },
+    {
+      "word_meaning": "adv.此外，而且；也，同样;conj.另外，又",
+      "word_name": "also",
+      "word_pronunciation": "[ˈɔːlsoʊ]"
+    },
+    {
+      "word_name": "certain",
+      "word_meaning": "adj.确定的",
+      "word_pronunciation": "[sɜːtən]"
+    },
+    {
+      "word_meaning": "prep.为了",
+      "word_name": "for",
+      "word_pronunciation": "[fɔːr]"
+    },
+    {
+      "word_meaning": "n.歌曲",
+      "word_name": "song",
+      "word_pronunciation": "[sɒŋ]"
+    },
+    {
+      "word_meaning": "adv.无处",
+      "word_name": "nowhere",
+      "word_pronunciation": "[ˈnoʊwer]"
+    },
+    {
+      "word_meaning": "n.失败",
+      "word_name": "failure",
+      "word_pronunciation": "[ˈfeɪljər]"
+    },
+    {
+      "word_meaning": "v.&n.租赁",
+      "word_name": "lease",
+      "word_pronunciation": "[liːs]"
+    },
+    {
+      "word_meaning": "n.八月",
+      "word_name": "August",
+      "word_pronunciation": "[ɔːɡəst]"
+    },
+    {
+      "word_meaning": "n.种子",
+      "word_name": "seed",
+      "word_pronunciation": "[siːd]"
+    },
+    {
+      "word_meaning": "v.属于",
+      "word_name": "belong",
+      "word_pronunciation": "[bɪ'lɒŋ]"
+    },
+    {
+      "word_meaning": "n.电影",
+      "word_name": "film",
+      "word_pronunciation": "[fɪlm]"
+    },
+    {
+      "word_meaning": "n.肌肉",
+      "word_name": "muscle",
+      "word_pronunciation": "[mʌsəl]"
+    },
+    {
+      "word_meaning": "n.星期一",
+      "word_name": "Monday",
+      "word_pronunciation": "[ˈmʌndi]"
+    },
+    {
+      "word_meaning": "adj.任何的",
+      "word_name": "any",
+      "word_pronunciation": "[eni]"
+    },
+    {
+      "word_meaning": "n.黑暗；adj.深色的",
+      "word_name": "dark",
+      "word_pronunciation": "[dɑːk]"
+    },
+    {
+      "word_meaning": "pron.我们自己",
+      "word_name": "ourselves",
+      "word_pronunciation": "[aʊərˈselvz]"
+    },
+    {
+      "word_meaning": "n.星期三",
+      "word_name": "Wednesday",
+      "word_pronunciation": "['wenzdei]"
+    },
+    {
+      "word_meaning": "n.澳大利亚",
+      "word_name": "Australia",
+      "word_pronunciation": "[ɒ'streɪlɪə]"
+    },
+    {
+      "word_meaning": "adj.拥挤的",
+      "word_name": "crowded",
+      "word_pronunciation": "[ˈkraʊdɪd]"
+    },
+    {
+      "word_meaning": "n.寒冷",
+      "word_name": "cold",
+      "word_pronunciation": "[kəʊld]"
+    },
+    {
+      "word_meaning": "n.橙，橙色",
+      "word_name": "orange",
+      "word_pronunciation": "[ˈɒrɪndʒ]"
+    },
+    {
+      "word_meaning": "adj.男的，雄性的",
+      "word_name": "male",
+      "word_pronunciation": "[meɪl]"
+    },
+    {
+      "word_meaning": "pron.哪个",
+      "word_name": "which",
+      "word_pronunciation": "[wɪtʃ]"
+    },
+    {
+      "word_meaning": "n.就寝时间",
+      "word_name": "bedtime",
+      "word_pronunciation": "[ˈbedtaɪm]"
+    },
+    {
+      "word_meaning": "pron. ",
+      "word_name": "she",
+      "word_pronunciation": "[ʃiː]"
+    },
+    {
+      "word_meaning": "n.地址",
+      "word_name": "address",
+      "word_pronunciation": "[ə'dres]"
+    },
+    {
+      "word_meaning": "adv.在那里",
+      "word_name": "there",
+      "word_pronunciation": "[ðeə]"
+    },
+    {
+      "word_meaning": "n.(货币单位)分",
+      "word_name": "cent",
+      "word_pronunciation": "[sent]"
+    },
+    {
+      "word_meaning": "pron.任何事",
+      "word_name": "anything",
+      "word_pronunciation": "[eniθɪŋ]"
+    },
+    {
+      "word_meaning": "v.&n.设计",
+      "word_name": "design",
+      "word_pronunciation": "[dɪ'zaɪn]"
+    },
+    {
+      "word_meaning": "n.北方",
+      "word_name": "north",
+      "word_pronunciation": "[nɔːθ]"
+    },
+    {
+      "word_meaning": "n.印度",
+      "word_name": "India",
+      "word_pronunciation": "[ɪndɪə]"
+    },
+    {
+      "word_meaning": "v.合作",
+      "word_name": "cooperate",
+      "word_pronunciation": "[kəʊˈɒpəreɪt]"
+    },
+    {
+      "word_meaning": "conj.无论何时",
+      "word_name": "whenever",
+      "word_pronunciation": "[wen'evə]"
+    },
+    {
+      "word_meaning": "n.机器",
+      "word_name": "machine",
+      "word_pronunciation": "[mə'ʃiːn]"
+    },
+    {
+      "word_meaning": "adv.离开，在远处",
+      "word_name": "away",
+      "word_pronunciation": "[ə'weɪ]"
+    },
+    {
+      "word_meaning": "n.妈妈",
+      "word_name": "mum",
+      "word_pronunciation": "[mʌm]"
+    },
+    {
+      "word_meaning": "n.女士",
+      "word_name": "lady",
+      "word_pronunciation": "[leɪdi]"
+    },
+    {
+      "word_meaning": "adj.忙碌的",
+      "word_name": "busy",
+      "word_pronunciation": "[bɪzi]"
+    },
+    {
+      "word_meaning": "n.自行车",
+      "word_name": "bike",
+      "word_pronunciation": "[baɪk]"
+    },
+    {
+      "word_meaning": "conj.因为",
+      "word_name": "because",
+      "word_pronunciation": "[bɪ'kɒz]"
+    },
+    {
+      "word_meaning": "num.五",
+      "word_name": "five",
+      "word_pronunciation": "[faɪv]"
+    },
+    {
+      "word_meaning": "n.呼吸",
+      "word_name": "breath",
+      "word_pronunciation": "[breθ]"
+    },
+    {
+      "word_meaning": "adj.小心的",
+      "word_name": "careful",
+      "word_pronunciation": "[ˈkerfl]"
+    },
+    {
+      "word_meaning": "v.&n.需求，要求",
+      "word_name": "demand",
+      "word_pronunciation": "[dɪ'mɑːnd]"
+    },
+    {
+      "word_meaning": "v.&n.感谢",
+      "word_name": "thank",
+      "word_pronunciation": "[θæŋk]"
+    },
+    {
+      "word_meaning": "aux v.能，可以;",
+      "word_name": "could",
+      "word_pronunciation": "[kʊd; kəd]"
+    },
+    {
+      "word_meaning": "n. 段落",
+      "word_name": "paragraph",
+      "word_pronunciation": "[pærəɡræf]"
+    },
+    {
+      "word_meaning": "n. 祖父母",
+      "word_name": "grandparent",
+      "word_pronunciation": "[ɡrændpeərənt]"
+    },
+    {
+      "word_meaning": "adj.中间的，中等的",
+      "word_name": "middle",
+      "word_pronunciation": "[mɪdəl]"
+    },
+    {
+      "word_meaning": "n.名字；v.命名",
+      "word_name": "name",
+      "word_pronunciation": "[neɪm]"
+    },
+    {
+      "word_meaning": "v.&n.欢迎",
+      "word_name": "welcome",
+      "word_pronunciation": "[welkəm]"
+    },
+    {
+      "word_meaning": "adv.否则，另外",
+      "word_name": "otherwise",
+      "word_pronunciation": "[ʌðəwaɪz]"
+    },
+    {
+      "word_meaning": "aux v.能，会",
+      "word_name": "can",
+      "word_pronunciation": "[kən]"
+    },
+    {
+      "word_meaning": "v.解释，阐明",
+      "word_name": "define",
+      "word_pronunciation": "[dɪ'faɪn]"
+    },
+    {
+      "word_meaning": "n.牛奶",
+      "word_name": "milk",
+      "word_pronunciation": "[mɪlk]"
+    },
+    {
+      "word_meaning": "v.基于...;n.基",
+      "word_name": "base",
+      "word_pronunciation": "[beɪs]"
+    },
+    {
+      "word_meaning": "pron.它的",
+      "word_name": "its",
+      "word_pronunciation": "[ɪts]"
+    },
+    {
+      "word_meaning": "num.三",
+      "word_name": "three",
+      "word_pronunciation": "[θriː]"
+    },
+    {
+      "word_meaning": "conj.如果，假如",
+      "word_name": "if",
+      "word_pronunciation": "[ɪf]"
+    },
+    {
+      "word_meaning": "conj.是否；不论",
+      "word_name": "whether",
+      "word_pronunciation": "[weðə]"
+    },
+    {
+      "word_meaning": "pron.它自己",
+      "word_name": "itself",
+      "word_pronunciation": "[ɪt'self]"
+    },
+    {
+      "word_meaning": "prep.在...周围",
+      "word_name": "around",
+      "word_pronunciation": "[ə'raʊnd]"
+    },
+    {
+      "word_meaning": "n.方向，指导",
+      "word_name": "direction",
+      "word_pronunciation": "[daɪ'rekʃən]"
+    },
+    {
+      "word_meaning": "pron.我",
+      "word_name": "me",
+      "word_pronunciation": "[m'iː]"
+    },
+    {
+      "word_meaning": "adj.热的，热情的",
+      "word_name": "hot",
+      "word_pronunciation": "[hɒt]"
+    },
+    {
+      "word_meaning": "pron.每个人，人人",
+      "word_name": "everybody",
+      "word_pronunciation": "[ˈevribʌdi]"
+    },
+    {
+      "word_meaning": "adj&adv.更多的",
+      "word_name": "more",
+      "word_pronunciation": "[mɔːr]"
+    },
+    {
+      "word_meaning": "n.夫人",
+      "word_name": "madame",
+      "word_pronunciation": "[mædəm]"
+    },
+    {
+      "word_meaning": "pron.没有人（=no one）",
+      "word_name": "nobody",
+      "word_pronunciation": "[ˈnoʊbɑːdi]"
+    },
+    {
+      "word_meaning": "aux.可能",
+      "word_name": "may",
+      "word_pronunciation": "[meɪ]"
+    },
+    {
+      "word_meaning": "prep.除…以外",
+      "word_name": "beside",
+      "word_pronunciation": "[bɪ'saɪd]"
+    },
+    {
+      "word_meaning": "n.空气，天空",
+      "word_name": "air",
+      "word_pronunciation": "[eə]"
+    },
+    {
+      "word_meaning": "v.借用",
+      "word_name": "borrow",
+      "word_pronunciation": "[ˈbɔːroʊ]"
+    },
+    {
+      "word_meaning": "n.过错，错误",
+      "word_name": "fault",
+      "word_pronunciation": "[fɔːlt]"
+    },
+    {
+      "word_meaning": "adv.各处;n.每个地方",
+      "word_name": "everywhere",
+      "word_pronunciation": "[evriweə]"
+    },
+    {
+      "word_meaning": "v.同意",
+      "word_name": "agree",
+      "word_pronunciation": "[ə'ɡriː]"
+    },
+    {
+      "word_meaning": "aux v.应该",
+      "word_name": "should",
+      "word_pronunciation": "[ʃʊd]"
+    },
+    {
+      "word_meaning": "n.餐馆",
+      "word_name": "restaurant",
+      "word_pronunciation": "[restərɒnt]"
+    },
+    {
+      "word_meaning": "v.让,允许",
+      "word_name": "let",
+      "word_pronunciation": "[let]"
+    },
+    {
+      "word_meaning": "n.箱，盒子",
+      "word_name": "box",
+      "word_pronunciation": "[bɒks]"
+    },
+    {
+      "word_meaning": "n.信用",
+      "word_name": "credit",
+      "word_pronunciation": "[kredɪt]"
+    },
+    {
+      "word_meaning": "n.女儿",
+      "word_name": "daughter",
+      "word_pronunciation": "[dɔːtə]"
+    },
+    {
+      "word_meaning": "n.两个；num.二",
+      "word_name": "two",
+      "word_pronunciation": "[tuː]"
+    },
+    {
+      "word_meaning": "adj.每日的，日常的",
+      "word_name": "daily",
+      "word_pronunciation": "[deɪli]"
+    },
+    {
+      "word_meaning": "n.午夜",
+      "word_name": "midnight",
+      "word_pronunciation": "[mɪdnaɪt]"
+    },
+    {
+      "word_meaning": "adj.另外的",
+      "word_name": "another",
+      "word_pronunciation": "[ə'nʌðə]"
+    },
+    {
+      "word_meaning": "adv.总是",
+      "word_name": "always",
+      "word_pronunciation": "[ɔːlweɪz]"
+    },
+    {
+      "word_meaning": "prep.反对，防备",
+      "word_name": "against",
+      "word_pronunciation": "[ə'ɡenst]"
+    },
+    {
+      "word_meaning": "n.过去；adj.过去的",
+      "word_name": "past",
+      "word_pronunciation": "[pɑːst]"
+    },
+    {
+      "word_meaning": "v.变得,得到",
+      "word_name": "get",
+      "word_pronunciation": "[ɡet]"
+    },
+    {
+      "word_meaning": "n.邮件；v.邮寄",
+      "word_name": "mail",
+      "word_pronunciation": "[meɪl]"
+    },
+    {
+      "word_meaning": "n.（外）祖母",
+      "word_name": "grandmother",
+      "word_pronunciation": "[ˈɡrænmʌðər]"
+    },
+    {
+      "word_meaning": "n.自行车；v.骑车",
+      "word_name": "cycle",
+      "word_pronunciation": "[saɪkəl]"
+    },
+    {
+      "word_meaning": "n.白色；adj.白色的",
+      "word_name": "white",
+      "word_pronunciation": "[waɪt]"
+    },
+    {
+      "word_meaning": "n.费用；v.收费，控告",
+      "word_name": "charge",
+      "word_pronunciation": "[tʃɑːdʒ]"
+    },
+    {
+      "word_meaning": "n.资源",
+      "word_name": "resource",
+      "word_pronunciation": "[rɪ'zɔːs]"
+    },
+    {
+      "word_meaning": "n.法律",
+      "word_name": "law",
+      "word_pronunciation": "[lɔː]"
+    },
+    {
+      "word_meaning": "n.活动",
+      "word_name": "activity",
+      "word_pronunciation": "[ækˈtɪvəti]"
+    },
+    {
+      "word_meaning": "n.电视",
+      "word_name": "TV",
+      "word_pronunciation": "[tiː'viː]"
+    },
+    {
+      "word_meaning": "n.描述，描写",
+      "word_name": "description",
+      "word_pronunciation": "[dɪˈskrɪpʃn]"
+    },
+    {
+      "word_meaning": "adj.大量的;adv.非常",
+      "word_name": "much",
+      "word_pronunciation": "[mʌtʃ]"
+    },
+    {
+      "word_meaning": "pron.任何人",
+      "word_name": "anyone",
+      "word_pronunciation": "[ˈeniwʌn]"
+    },
+    {
+      "word_meaning": "n.血，血液",
+      "word_name": "blood",
+      "word_pronunciation": "[blʌd]"
+    },
+    {
+      "word_meaning": "adv.首先",
+      "word_name": "firstly",
+      "word_pronunciation": "[fɜːstli]"
+    },
+    {
+      "word_meaning": "n.鼻子",
+      "word_name": "nose",
+      "word_pronunciation": "[nəʊz]"
+    },
+    {
+      "word_meaning": "n.电子信函",
+      "word_name": "email",
+      "word_pronunciation": "[iːmeɪl]"
+    },
+    {
+      "word_meaning": "adv.向上，上涨",
+      "word_name": "up",
+      "word_pronunciation": "[ʌp]"
+    },
+    {
+      "word_meaning": "pron.你自己",
+      "word_name": "yourself",
+      "word_pronunciation": "[jərˈself]"
+    },
+    {
+      "word_meaning": "adj.(两者中的）任何一个",
+      "word_name": "either",
+      "word_pronunciation": "[aɪðə]"
+    },
+    {
+      "word_meaning": "num.十四",
+      "word_name": "fourteen",
+      "word_pronunciation": "[fɔː'tiːn]"
+    },
+    {
+      "word_meaning": "pron. 自己",
+      "word_name": "herself",
+      "word_pronunciation": "[ə'self]"
+    },
+    {
+      "word_meaning": "n.情况,实例",
+      "word_name": "case",
+      "word_pronunciation": "[keɪs]"
+    },
+    {
+      "word_meaning": "prep.没有",
+      "word_name": "without",
+      "word_pronunciation": "[wɪð'aʊt]"
+    },
+    {
+      "word_meaning": "adv.为什么",
+      "word_name": "why",
+      "word_pronunciation": "[waɪ]"
+    },
+    {
+      "word_meaning": "n.祖父",
+      "word_name": "grandfather",
+      "word_pronunciation": "[ˈɡrænfɑːðər]"
+    },
+    {
+      "word_meaning": "n.今天",
+      "word_name": "today",
+      "word_pronunciation": "[tə'deɪ]"
+    },
+    {
+      "word_meaning": "pron.没有人",
+      "word_name": "none",
+      "word_pronunciation": "[nʌn]"
+    },
+    {
+      "word_meaning": "n.绿色",
+      "word_name": "green",
+      "word_pronunciation": "[ɡriːn]"
+    },
+    {
+      "word_meaning": "adj.生气的",
+      "word_name": "angry",
+      "word_pronunciation": "[ˈæŋɡri]"
+    },
+    {
+      "word_meaning": "n.面包",
+      "word_name": "bread",
+      "word_pronunciation": "[bred]"
+    },
+    {
+      "word_meaning": "adj.当前的",
+      "word_name": "current",
+      "word_pronunciation": "[kʌrənt]"
+    },
+    {
+      "word_meaning": "v.走",
+      "word_name": "go",
+      "word_pronunciation": "[ɡəʊ]"
+    },
+    {
+      "word_meaning": "adv.以前",
+      "word_name": "ago",
+      "word_pronunciation": "[ə'ɡəʊ]"
+    },
+    {
+      "word_meaning": "adj.灰色的",
+      "word_name": "grey",
+      "word_pronunciation": "[ɡreɪ]"
+    },
+    {
+      "word_meaning": "adj.积极的",
+      "word_name": "active",
+      "word_pronunciation": "[ˈæktɪv]"
+    },
+    {
+      "word_meaning": "adv.仍然;adj.静止的",
+      "word_name": "still",
+      "word_pronunciation": "[stɪl]"
+    },
+    {
+      "word_meaning": "n.兄弟",
+      "word_name": "brother",
+      "word_pronunciation": "[brʌðə]"
+    },
+    {
+      "word_meaning": "n.巴西",
+      "word_name": "Brazil",
+      "word_pronunciation": "[brə'zɪl]"
+    },
+    {
+      "word_meaning": "v.复印,效仿",
+      "word_name": "copy",
+      "word_pronunciation": "[kɒpi]"
+    },
+    {
+      "word_meaning": "n.卡片",
+      "word_name": "card",
+      "word_pronunciation": "[kɑːd]"
+    },
+    {
+      "word_meaning": "n.德国",
+      "word_name": "Germany",
+      "word_pronunciation": "[dʒɜːməni]"
+    },
+    {
+      "word_meaning": "prep. 在……内",
+      "word_name": "in",
+      "word_pronunciation": "[ɪn]"
+    },
+    {
+      "word_meaning": "adv.只,仅仅;adj.仅有的",
+      "word_name": "only",
+      "word_pronunciation": "[ˈoʊnli]"
+    },
+    {
+      "word_meaning": "n.职业",
+      "word_name": "career",
+      "word_pronunciation": "[kə'rɪə]"
+    },
+    {
+      "word_meaning": "n.类型，种类",
+      "word_name": "type",
+      "word_pronunciation": "[taɪp]"
+    },
+    {
+      "word_meaning": "n. 星期日",
+      "word_name": "Sunday",
+      "word_pronunciation": "['sʌndi]"
+    },
+    {
+      "word_meaning": "adv.现今",
+      "word_name": "nowadays",
+      "word_pronunciation": "[naʊədeɪz]"
+    },
+    {
+      "word_meaning": "pron.我的",
+      "word_name": "my",
+      "word_pronunciation": "[maɪ]"
+    },
+    {
+      "word_meaning": "num. 十个，十",
+      "word_name": "ten",
+      "word_pronunciation": "[ten]"
+    },
+    {
+      "word_meaning": "num.百万",
+      "word_name": "million",
+      "word_pronunciation": "[mɪljən]"
+    },
+    {
+      "word_meaning": "conj.尽管，虽然",
+      "word_name": "although",
+      "word_pronunciation": "[ɔːl'ðəʊ]"
+    },
+    {
+      "word_meaning": "n.狗",
+      "word_name": "dog",
+      "word_pronunciation": "[dɒɡ]"
+    },
+    {
+      "word_meaning": "n&v.领导",
+      "word_name": "lead",
+      "word_pronunciation": "[liːd]"
+    },
+    {
+      "word_meaning": "n.汽车",
+      "word_name": "car",
+      "word_pronunciation": "[kɑː]"
+    },
+    {
+      "word_meaning": "adj.这样的",
+      "word_name": "such",
+      "word_pronunciation": "[sʌtʃ]"
+    },
+    {
+      "word_meaning": "n.连衣裙",
+      "word_name": "dress",
+      "word_pronunciation": "[dres]"
+    },
+    {
+      "word_meaning": "n.星期二",
+      "word_name": "Tuesday",
+      "word_pronunciation": "[ˈtuːzdi]"
+    },
+    {
+      "word_meaning": "adv.此外;adj.其他的",
+      "word_name": "else",
+      "word_pronunciation": "[els]"
+    },
+    {
+      "word_meaning": "n.七月",
+      "word_name": "July",
+      "word_pronunciation": "[dʒʊˈlaɪ]"
+    },
+    {
+      "word_meaning": "n.埃及",
+      "word_name": "Egypt",
+      "word_pronunciation": "[iːdʒɪpt]"
+    },
+    {
+      "word_meaning": "adv.也许,可能",
+      "word_name": "maybe",
+      "word_pronunciation": "[meɪbi]"
+    },
+    {
+      "word_meaning": "prep.从...起，来自",
+      "word_name": "from",
+      "word_pronunciation": "[frəm]"
+    },
+    {
+      "word_meaning": "adv. 离开，结束",
+      "word_name": "off",
+      "word_pronunciation": "[ɔːf]"
+    },
+    {
+      "word_meaning": "adv.非常，很",
+      "word_name": "very",
+      "word_pronunciation": "[ˈveri]"
+    },
+    {
+      "word_meaning": "adv.曾经；n.一次",
+      "word_name": "once",
+      "word_pronunciation": "[wʌns]"
+    },
+    {
+      "word_meaning": "n.&v.希望",
+      "word_name": "hope",
+      "word_pronunciation": "[hoʊp]"
+    },
+    {
+      "word_meaning": "adv.很好地,充分地",
+      "word_name": "well",
+      "word_pronunciation": "[wel]"
+    },
+    {
+      "word_meaning": "n. 肉",
+      "word_name": "meat",
+      "word_pronunciation": "[miːt]"
+    },
+    {
+      "word_meaning": "pron.我们",
+      "word_name": "we",
+      "word_pronunciation": "[wiː]"
+    },
+    {
+      "word_meaning": "adj.最小的，最少的",
+      "word_name": "least",
+      "word_pronunciation": "[liːst]"
+    },
+    {
+      "word_meaning": "det.你的，你们的",
+      "word_name": "your",
+      "word_pronunciation": "[jʊr; jər]"
+    },
+    {
+      "word_meaning": "adv.已经",
+      "word_name": "already",
+      "word_pronunciation": "[ɔːl'redi]"
+    },
+    {
+      "word_meaning": "adv.无论如何",
+      "word_name": "anyway",
+      "word_pronunciation": "[eniweɪ]"
+    },
+    {
+      "word_meaning": "n.球",
+      "word_name": "ball",
+      "word_pronunciation": "[bɔːl]"
+    },
+    {
+      "word_meaning": "v.似乎，好像",
+      "word_name": "seem",
+      "word_pronunciation": "[siːm]"
+    },
+    {
+      "word_meaning": "n.窗",
+      "word_name": "window",
+      "word_pronunciation": "[wɪndəʊ]"
+    },
+    {
+      "word_meaning": "prep.在...中间",
+      "word_name": "among",
+      "word_pronunciation": "[ə'mʌŋ]"
+    },
+    {
+      "word_meaning": "prep.以上，超过",
+      "word_name": "over",
+      "word_pronunciation": "[əʊvə]"
+    },
+    {
+      "word_meaning": "n. 星期六",
+      "word_name": "Saturday",
+      "word_pronunciation": "['sætədei]"
+    },
+    {
+      "word_meaning": "v.注意到，察觉",
+      "word_name": "notice",
+      "word_pronunciation": "[nəʊtɪs]"
+    },
+    {
+      "word_meaning": "pron.你，你们",
+      "word_name": "you",
+      "word_pronunciation": "[juː]"
+    },
+    {
+      "word_meaning": "n.作家",
+      "word_name": "author",
+      "word_pronunciation": "[ɔːθə]"
+    },
+    {
+      "word_meaning": "n.耳朵",
+      "word_name": "ear",
+      "word_pronunciation": "[ɪə]"
+    },
+    {
+      "word_meaning": "n.美元",
+      "word_name": "dollar",
+      "word_pronunciation": "[dɒlə]"
+    },
+    {
+      "word_meaning": "n.房子",
+      "word_name": "house",
+      "word_pronunciation": "[haʊs]"
+    },
+    {
+      "word_meaning": "n.飞机场",
+      "word_name": "airport",
+      "word_pronunciation": "[eəpɔːt]"
+    },
+    {
+      "word_meaning": "n.头，首领",
+      "word_name": "head",
+      "word_pronunciation": "[hed]"
+    },
+    {
+      "word_meaning": "aux.可能",
+      "word_name": "might",
+      "word_pronunciation": "[maɪt]"
+    },
+    {
+      "word_meaning": "prep.除...之外（还）",
+      "word_name": "besides",
+      "word_pronunciation": "[bɪ'saɪdz]"
+    },
+    {
+      "word_meaning": "adj.精神的",
+      "word_name": "mental",
+      "word_pronunciation": "[mentəl]"
+    },
+    {
+      "word_meaning": "n.全部;adj.全部的",
+      "word_name": "whole",
+      "word_pronunciation": "[həʊl]"
+    },
+    {
+      "word_meaning": "n.布",
+      "word_name": "cloth",
+      "word_pronunciation": "[klɔːθ]"
+    },
+    {
+      "word_meaning": "conj.比",
+      "word_name": "than",
+      "word_pronunciation": "[ðən]"
+    },
+    {
+      "word_meaning": "det.我们的",
+      "word_name": "our",
+      "word_pronunciation": "[ˈaʊər; ɑːr]"
+    },
+    {
+      "word_meaning": "n.英国",
+      "word_name": "UK",
+      "word_pronunciation": "[ˌjuː'keɪ]"
+    },
+    {
+      "word_meaning": "adj.凉爽的",
+      "word_name": "cool",
+      "word_pronunciation": "[kuːl]"
+    },
+    {
+      "word_meaning": "n.公司",
+      "word_name": "company",
+      "word_pronunciation": "[kʌmpəni]"
+    },
+    {
+      "word_meaning": "adv.真正地",
+      "word_name": "really",
+      "word_pronunciation": "[rɪəli]"
+    },
+    {
+      "word_meaning": "adv.甚至",
+      "word_name": "even",
+      "word_pronunciation": "[iːvən]"
+    },
+    {
+      "word_meaning": "n.欧洲",
+      "word_name": "Europe",
+      "word_pronunciation": "[jʊərəp]"
+    },
+    {
+      "word_meaning": "n.消息,新闻",
+      "word_name": "news",
+      "word_pronunciation": "[njuːz]"
+    },
+    {
+      "word_meaning": "v.做",
+      "word_name": "do",
+      "word_pronunciation": "[duː]"
+    },
+    {
+      "word_meaning": "adj.简单的",
+      "word_name": "simple",
+      "word_pronunciation": "[sɪmpəl]"
+    },
+    {
+      "word_meaning": "n.下午",
+      "word_name": "afternoon",
+      "word_pronunciation": "[ɑːftə'nuːn]"
+    },
+    {
+      "word_meaning": "n.晚上",
+      "word_name": "evening",
+      "word_pronunciation": "[iːvnɪŋ]"
+    },
+    {
+      "word_meaning": "prep.超过，越过",
+      "word_name": "beyond",
+      "word_pronunciation": "[bɪ'jɒnd]"
+    },
+    {
+      "word_meaning": "n.想法",
+      "word_name": "idea",
+      "word_pronunciation": "[aɪ'dɪə]"
+    },
+    {
+      "word_meaning": "n.上升",
+      "word_name": "raise",
+      "word_pronunciation": "[reɪz]"
+    },
+    {
+      "word_meaning": "n.岛屿",
+      "word_name": "island",
+      "word_pronunciation": "[aɪlənd]"
+    },
+    {
+      "word_meaning": "n. 非洲",
+      "word_name": "Africa",
+      "word_pronunciation": "[æfrɪkə]"
+    },
+    {
+      "word_meaning": "n.一半",
+      "word_name": "half",
+      "word_pronunciation": "[hɑːf]"
+    },
+    {
+      "word_meaning": "adj.美好的",
+      "word_name": "fine",
+      "word_pronunciation": "[faɪn]"
+    },
+    {
+      "word_meaning": "n.明天",
+      "word_name": "tomorrow",
+      "word_pronunciation": "[tə'mɒrəʊ]"
+    },
+    {
+      "word_meaning": "n.中国",
+      "word_name": "China",
+      "word_pronunciation": "[ˈtʃaɪnə]"
+    },
+    {
+      "word_meaning": "prep.关于",
+      "word_name": "about",
+      "word_pronunciation": "[ə'baʊt]"
+    },
+    {
+      "word_meaning": "n.美国",
+      "word_name": "USA",
+      "word_pronunciation": "[ˌjuːesˈeɪ]"
+    },
+    {
+      "word_meaning": "det.他们的； 们的；它们的",
+      "word_name": "their",
+      "word_pronunciation": "[ðer; ðər]"
+    },
+    {
+      "word_meaning": "adv.也",
+      "word_name": "too",
+      "word_pronunciation": "[tuː]"
+    },
+    {
+      "word_meaning": "pron.他",
+      "word_name": "he",
+      "word_pronunciation": "[hiː]"
+    },
+    {
+      "word_meaning": "n.瓶子",
+      "word_name": "bottle",
+      "word_pronunciation": "[bɒtəl]"
+    },
+    {
+      "word_meaning": "n.蓝色",
+      "word_name": "blue",
+      "word_pronunciation": "[bluː]"
+    },
+    {
+      "word_meaning": "v.捕获，抓住",
+      "word_name": "catch",
+      "word_pronunciation": "[kætʃ]"
+    },
+    {
+      "word_meaning": "n.原因",
+      "word_name": "cause",
+      "word_pronunciation": "[kɔːz]"
+    },
+    {
+      "word_meaning": "n.亚洲",
+      "word_name": "Asia",
+      "word_pronunciation": "[eɪʒə]"
+    },
+    {
+      "word_meaning": "num.第三",
+      "word_name": "third",
+      "word_pronunciation": "[θɜːd]"
+    },
+    {
+      "word_meaning": "n.奶奶",
+      "word_name": "grandma",
+      "word_pronunciation": "[ɡrændmɑː]"
+    },
+    {
+      "word_meaning": "n.午餐",
+      "word_name": "lunch",
+      "word_pronunciation": "[lʌntʃ]"
+    },
+    {
+      "word_meaning": "adj.深的",
+      "word_name": "deep",
+      "word_pronunciation": "[diːp]"
+    },
+    {
+      "word_meaning": "pron.某事",
+      "word_name": "something",
+      "word_pronunciation": "[sʌmθɪŋ]"
+    },
+    {
+      "word_meaning": "n.演员",
+      "word_name": "actor",
+      "word_pronunciation": "[ˈæktər]"
+    },
+    {
+      "word_meaning": "vt.欢迎",
+      "word_name": "greet",
+      "word_pronunciation": "[ɡriːt]"
+    },
+    {
+      "word_meaning": "n.鸟",
+      "word_name": "bird",
+      "word_pronunciation": "[bɜːd]"
+    },
+    {
+      "word_meaning": "adv.横过",
+      "word_name": "across",
+      "word_pronunciation": "[ə'krɒs]"
+    },
+    {
+      "word_meaning": "n.篮",
+      "word_name": "basket",
+      "word_pronunciation": "[bɑːskɪt]"
+    },
+    {
+      "word_meaning": "n.爸爸",
+      "word_name": "dad",
+      "word_pronunciation": "[dæd]"
+    },
+    {
+      "word_meaning": "n.课程",
+      "word_name": "course",
+      "word_pronunciation": "[kɔːs]"
+    },
+    {
+      "word_meaning": "adj.黑色的",
+      "word_name": "black",
+      "word_pronunciation": "[blæk]"
+    },
+    {
+      "word_meaning": "n.妈咪",
+      "word_name": "mommy",
+      "word_pronunciation": "[ˈmɑːmi]"
+    },
+    {
+      "word_meaning": "n.苹果",
+      "word_name": "apple",
+      "word_pronunciation": "[æpl]"
+    },
+    {
+      "word_meaning": "n.茶，茶水",
+      "word_name": "tea",
+      "word_pronunciation": "[tiː]"
+    },
+    {
+      "word_meaning": "n.心，心脏",
+      "word_name": "heart",
+      "word_pronunciation": "[hɑːt]"
+    },
+    {
+      "word_meaning": "adv.每天,天天",
+      "word_name": "everyday",
+      "word_pronunciation": "[evrideɪ]"
+    },
+    {
+      "word_meaning": "n.星期四",
+      "word_name": "Thursday",
+      "word_pronunciation": "['θɜːrzdei]"
+    },
+    {
+      "word_meaning": "n.男孩",
+      "word_name": "boy",
+      "word_pronunciation": "[bɔɪ]"
+    },
+    {
+      "word_meaning": "n.公园",
+      "word_name": "park",
+      "word_pronunciation": "[pɑːk]"
+    },
+    {
+      "word_meaning": "n.事件；vi.有关系",
+      "word_name": "matter",
+      "word_pronunciation": "[mætə]"
+    },
+    {
+      "word_meaning": "v.行动，表现",
+      "word_name": "act",
+      "word_pronunciation": "[ækt]"
+    },
+    {
+      "word_meaning": "n.动作，行动",
+      "word_name": "action",
+      "word_pronunciation": "[ˈækʃn]"
+    },
+    {
+      "word_meaning": "n.时钟",
+      "word_name": "clock",
+      "word_pronunciation": "[klɒk]"
+    },
+    {
+      "word_meaning": "n.教室",
+      "word_name": "classroom",
+      "word_pronunciation": "[ˈklɑːsˌruːm]"
+    },
+    {
+      "word_meaning": "n.会议",
+      "word_name": "meeting",
+      "word_pronunciation": "[miːtɪŋ]"
+    },
+    {
+      "word_meaning": "n.地面",
+      "word_name": "floor",
+      "word_pronunciation": "[flɔː]"
+    },
+    {
+      "word_meaning": "vt.吻",
+      "word_name": "kiss",
+      "word_pronunciation": "[kɪs]"
+    },
+    {
+      "word_meaning": "art.一",
+      "word_name": "an",
+      "word_pronunciation": "[æn]"
+    },
+    {
+      "word_meaning": "vt.下载",
+      "word_name": "download",
+      "word_pronunciation": "[ˌdaʊnˈləʊd]"
+    },
+    {
+      "word_meaning": "n.红色",
+      "word_name": "red",
+      "word_pronunciation": "[red]"
+    },
+    {
+      "word_meaning": "n.黄色",
+      "word_name": "yellow",
+      "word_pronunciation": "[jeləʊ]"
+    },
+    {
+      "word_meaning": "n.鱼",
+      "word_name": "fish",
+      "word_pronunciation": "[fɪʃ]"
+    },
+    {
+      "word_meaning": "adv.无论哪里",
+      "word_name": "wherever",
+      "word_pronunciation": "[weər'evə]"
+    },
+    {
+      "word_meaning": "num.八",
+      "word_name": "eight",
+      "word_pronunciation": "[eɪt]"
+    },
+    {
+      "word_meaning": "pron.全部",
+      "word_name": "all",
+      "word_pronunciation": "[ɔːl]"
+    },
+    {
+      "word_meaning": "n.癌症",
+      "word_name": "cancer",
+      "word_pronunciation": "[kænsə]"
+    },
+    {
+      "word_meaning": "adj.有利市场运作的",
+      "word_name": "market-friendly",
+      "word_pronunciation": "[ˈmɑːrkɪt-ˈfrendli]"
+    },
+    {
+      "word_meaning": "pron.谁",
+      "word_name": "whom",
+      "word_pronunciation": "[huːm]"
+    },
+    {
+      "word_meaning": "prep.顺着，沿着",
+      "word_name": "along",
+      "word_pronunciation": "[ə'lɒŋ]"
+    },
+    {
+      "word_meaning": "int.你好",
+      "word_name": "hello",
+      "word_pronunciation": "[hə'ləʊ]"
+    }
+  ]
+}
