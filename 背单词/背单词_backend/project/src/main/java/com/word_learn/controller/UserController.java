@@ -1,8 +1,10 @@
 package com.word_learn.controller;
 
 import com.word_learn.dto.LoginRequest;
+import com.word_learn.dto.UserResponse;
 import com.word_learn.entity.User;
 import com.word_learn.service.UserService;
+import com.word_learn.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,18 +21,18 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@RequestBody User user) {
-        User createdUser = userService.register(user);
-        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
+    public Result<UserResponse> registerUser(@RequestBody User user) {
+        UserResponse createdUser = userService.register(user);
+        return Result.success(createdUser);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<User> loginUser(@RequestBody LoginRequest loginRequest) {
-        User user = userService.login(loginRequest.getUsername(), loginRequest.getPassword());
+    public Result<UserResponse> loginUser(@RequestBody LoginRequest loginRequest) {
+        UserResponse user = userService.login(loginRequest.getUsername(), loginRequest.getPassword());
         if (user != null) {
-            return new ResponseEntity<>(user, HttpStatus.OK);
+            return Result.success(user);
         } else {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            return Result.error("用户名或密码错误！");
         }
     }
 }

@@ -19,9 +19,6 @@
         delete from favorite where user_id = #{userId} and word_id = #{id}
     </delete>
 
-    <select id="findByUserId" resultMap="wordMap">
-        select w.id,w.word_name ,w.word_pronunciation ,w.word_meaning ,f.user_id from words w inner join favorite f ON user_id = #{userId};
-    </select>
 
     <select id="existsByWordAndUserId" resultType="java.lang.Boolean">
         select EXISTS(select 1 from favorite as f inner join words as w ON f.word_id = w.id where f.user_id = #{userId} and w.word_name = #{word})

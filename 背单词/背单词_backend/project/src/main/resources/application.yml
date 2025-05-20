@@ -10,13 +10,4 @@ mybatis:
     map-underscore-to-camel-case: true
 server:
   port: 8081
-logging:
-  level:
-    org:
-      mybatis: info
-      apache:
-        ibatis: info
-    java.sql:
-      Connection: debug      # 打印连接信息（可选）
-      PreparedStatement: debug  # 打印 SQL 语句
-      ResultSet: off         # 关闭结果集打印
+
