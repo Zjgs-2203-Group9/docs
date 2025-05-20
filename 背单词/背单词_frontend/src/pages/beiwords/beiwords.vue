@@ -197,7 +197,7 @@ export default {
         ],
         [
           {
-            name: "术语",
+            name: "单词本",
             type: 2,
             col: 5,
             isShake: false,
@@ -205,7 +205,7 @@ export default {
               "https://itlifetime.com/resources/xiaochengxu/1711957790715.png",
           },
           {
-            name: "场景",
+            name: "文本翻译",
             type: 3,
             col: 7,
             isShake: false,
@@ -316,8 +316,10 @@ export default {
         wx.navigateTo({
           url: "/pages/beiwords/translate",
         });
-      } else if (item.type == 1) {
-        this.show = true;
+      } else if (item.type == 2) {
+        wx.navigateTo({
+          url: "/pages/beiwords1/favorwords",
+        });
       } else {
         wx.setStorageSync("wordInfo", JSON.stringify(item));
         wx.setStorageSync("isNote", 0);

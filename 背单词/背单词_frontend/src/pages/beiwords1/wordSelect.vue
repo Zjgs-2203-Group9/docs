@@ -112,8 +112,12 @@
                   ? '#F1aca7'
                   : '',
             }"
-            >{{ i.name }}、{{ i.option.word_meaning }}</view
-          >
+            >
+			  <view class="option-content">
+			    <text class="option-name">{{ i.name }}</text>
+			    <text class="option-meaning">{{ i.option.word_meaning }}</text>
+			  </view>
+			</view>
           <!-- 
              border:
                 currentOption && currentOption.name == i.name && i.isRight
@@ -659,14 +663,40 @@ export default {
     height: 20px;
     border-radius: 3px;
   }
-  .word-option {
-    padding: 5px 10px 5px 10px;
-    background: #fff;
-    height: 45px;
-    line-height: 45px;
-    margin-top: 10px;
-    border-radius: 5px;
+// 修改样式部分
+.word-option {
+  padding: 12rpx 20rpx;
+  background: #fff;
+  margin: 20rpx 0;
+  border-radius: 8rpx;
+  min-height: 80rpx; // 最小高度替代固定高度
+  display: flex;
+  align-items: center;
+
+  .option-content {
+    flex: 1;
+    display: flex;
+    align-items: baseline; // 基线对齐
   }
+
+  .option-name {
+    font-weight: bold;
+    font-size: 28rpx;
+    color: #333;
+    min-width: 60rpx; // 保证字母宽度一致
+    margin-right: 20rpx;
+  }
+
+  .option-meaning {
+    flex: 1;
+    font-size: 28rpx;
+    color: #666;
+    line-height: 1.6;
+    word-break: break-word; // 允许单词内断行
+    white-space: normal; // 允许换行
+    overflow-wrap: break-word; // 强制换行
+  }
+}
 
   ::v-deep .u-count-down__text {
     font-size: 30px !important;

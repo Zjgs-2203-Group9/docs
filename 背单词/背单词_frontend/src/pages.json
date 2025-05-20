@@ -5,7 +5,22 @@
 
   "pages": [
     //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-
+    {
+    	"path" : "pages/login/login",
+    	"style" : 
+    	{
+    		"navigationBarTitleText" : "",
+			"navigationStyle": "custom" 
+    	}
+    },
+	{
+		"path" : "pages/register/register",
+		"style" : 
+		{
+			"navigationBarTitleText" : "",
+			"navigationStyle": "custom" 
+		}
+	},
     {
       "path": "pages/beiwords/beiwords",
       "style": {
@@ -13,6 +28,13 @@
         "navigationStyle": "custom" //去掉头
       }
     },
+	{
+	  "path": "pages/beiwords1/favorwords",
+	  "style": {
+	    "navigationBarTitleText": "uni-app",
+	    "navigationStyle": "custom" //去掉头
+	  }
+	},
     {
       "path": "pages/beiwords2/scoreList",
       "style": {

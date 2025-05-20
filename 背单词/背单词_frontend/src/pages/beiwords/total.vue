@@ -1,26 +1,26 @@
 <template>
   <view
-      class="my-uni-app-body"
-      :style="{ minHeight: `${mainHeight}px`, background: '#f8f8f8!important' }"
+    class="my-uni-app-body"
+    :style="{ minHeight: `${mainHeight}px`, background: '#f8f8f8!important' }"
   >
     <u-navbar
-        :title="
+      :title="
         noteInfo
           ? `单词本——${noteInfo.name}`
           : wordInfo
           ? wordInfo.name
           : '错误单词'
       "
-        :bgColor="color"
-        placeholder
-        @leftClick="gotoIndex"
+      :bgColor="color"
+      placeholder
+      @leftClick="gotoIndex"
     ></u-navbar>
     <view style="padding: 20px 10px 0 10px">
       <u-row :gutter="20" v-if="!isNote || (isNote !== 1 && isNote !== 2)">
         <u-col v-for="(i, index) in fixedTypeList" :span="4" :key="index">
           <view
-              @click="doGetWords(i.value)"
-              :style="{
+            @click="doGetWords(i.value)"
+            :style="{
               background: type2 == i.value ? '' : color,
               borderRadius: '24px',
               padding: '5px',
@@ -36,43 +36,43 @@
       </u-row>
       <view style="margin: 10px 0 10px 0">
         <u-search
-            placeholder="输入单词"
-            v-model="keyword"
-            height="60"
-            :size="size"
-            @search="search"
-            @custom="search"
+          placeholder="输入单词"
+          v-model="keyword"
+          height="60"
+          :size="size"
+          @search="search"
+          @custom="search"
         ></u-search
-        ></view>
+      ></view>
       <u-row :gutter="20">
         <u-col :span="6">
           <u-button
-              type="primary"
-              icon="edit-pen"
-              shape="circle"
-              :size="size"
-              @click="gotoWordDetails"
-              :disabled="!dataList || dataList.length <= 0"
-          >前去默写单词</u-button
+            type="primary"
+            icon="edit-pen"
+            shape="circle"
+            :size="size"
+            @click="gotoWordDetails"
+            :disabled="!dataList || dataList.length <= 0"
+            >前去默写单词</u-button
           >
         </u-col>
         <u-col :span="6">
           <u-button
-              type="success"
-              icon="grid"
-              shape="circle"
-              @click="gotoWordDetails1"
-              :disabled="!dataList || dataList.length <= 0"
-          >前去记忆单词</u-button
+            type="success"
+            icon="grid"
+            shape="circle"
+            @click="gotoWordDetails1"
+            :disabled="!dataList || dataList.length <= 0"
+            >前去记忆单词</u-button
           >
         </u-col>
       </u-row>
     </view>
     <view style="padding: 20px 5px 0 5px">
       <view
-          v-for="(i, index) in showDataList"
-          :key="index"
-          style="
+        v-for="(i, index) in showDataList"
+        :key="index"
+        style="
           margin-bottom: 10px;
           background: #ffff;
           min-height: 50px;
@@ -88,7 +88,7 @@
               </text>
             </view>
             <view
-            ><text style="color: #ababab; font-size: 14px">{{
+              ><text style="color: #ababab; font-size: 14px">{{
                 i.word_meaning
               }}</text></view
             >
@@ -97,7 +97,7 @@
             <u-row :gutter="5" v-if="isNote && isNote == 1">
               <u-col :span="6">
                 <view
-                ><text style="font-size: 15px; color: #ababab">{{
+                  ><text style="font-size: 15px; color: #ababab">{{
                     i.word_pronunciation
                   }}</text></view
                 ></u-col
@@ -106,32 +106,44 @@
               <u-col :span="3">
                 <view @click="playShenyin(i.word_name)">
                   <img
-                      style="width: 20px; height: 20px; vertical-align: middle"
-                      class="word-sheng"
-                      src="https://itlifetime.com/resources/xiaochengxu/声音.png" /></view
-                ></u-col>
-              <u-col :span="3">
-                <view @click="cancelCollectWords(i.word_name, index)">
-                  <img
-                      style="width: 20px; height: 20px; vertical-align: middle"
-                      class="word-sheng"
-                      src="https://itlifetime.com/resources/xiaochengxu/爱心.png" /></view
-                ></u-col>
-            </u-row>
-            <u-row :gutter="5" v-else>
-              <u-col :span="9">
-                <view
-                ><text style="font-size: 15px; color: #ababab">{{
-                    i.word_pronunciation
-                  }}</text></view
-                ></u-col
-              ><u-col :span="3">
-              <view @click="playShenyin(i.word_name)">
-                <img
                     style="width: 20px; height: 20px; vertical-align: middle"
                     class="word-sheng"
                     src="https://itlifetime.com/resources/xiaochengxu/声音.png" /></view
               ></u-col>
+			  
+              <u-col :span="3">
+                <view @click="cancelCollectWords(i.word_name, index)">
+                  <img
+                    style="width: 20px; height: 20px; vertical-align: middle"
+                    class="word-sheng"
+                    src="https://itlifetime.com/resources/xiaochengxu/爱心.png" /></view
+              ></u-col>
+            </u-row>
+			
+            <u-row :gutter="5" v-else>
+              <u-col :span="7">
+                <view
+                  ><text style="font-size: 15px; color: #ababab">{{
+                    i.word_pronunciation
+                  }}</text></view
+                ></u-col
+              >
+			  <u-col :span="2">
+                <view @click="playShenyin(i.word_name)">
+                  <img
+                    style="width: 20px; height: 20px; vertical-align: middle"
+                    class="word-sheng"
+                    src="https://itlifetime.com/resources/xiaochengxu/声音.png" /></view
+              ></u-col>
+			  <u-col :span="3">
+			      <view @click="toggleCollect(i)">
+			        <u-icon 
+			          :name="i.isCollected ? 'heart-fill' : 'heart'"
+			          :color="i.isCollected ? '#ff4444' : '#c0c4cc'"
+			          size="22"
+			        ></u-icon>
+			      </view>
+			  </u-col>
             </u-row>
           </u-col>
         </u-row>
@@ -148,10 +160,10 @@
     </view>
     <view>
       <u-popup
-          :show="show"
-          @close="show = false"
-          @open="show = true"
-          mode="bottom"
+        :show="show"
+        @close="show = false"
+        @open="show = true"
+        mode="bottom"
       >
         <!-- 默写设置，默写多少个，随机抽查还是默认顺序，单个单词默写时长-->
         <view class="word-set">
@@ -164,7 +176,7 @@
             /> -->
             <view>
               <tetxt style="font-size: 12px; color: #ababab; margin-bottom: 8px"
-              >单词个数(当前词量：{{ sourceDataList.length }})：</tetxt
+                >单词个数(当前词量：{{ sourceDataList.length }})：</tetxt
               >
             </view>
 
@@ -177,11 +189,11 @@
             ></u--input> -->
 
             <u-number-box
-                :min="2"
-                integer
-                inputWidth="70px"
-                :max="sourceDataList.length > 20 ? 20 : sourceDataList.length"
-                v-model="wordSet.num"
+              :min="2"
+              integer
+              inputWidth="70px"
+              :max="sourceDataList.length > 20 ? 20 : sourceDataList.length"
+              v-model="wordSet.num"
             ></u-number-box>
           </view>
 
@@ -191,60 +203,60 @@
             </view>
 
             <view
-                style="
+              style="
                 background: #fff;
                 margin-top: 5px;
                 padding: 5px;
                 border-radius: 5px;
                 line-height: 40px;
               "
-                :style="{
+              :style="{
                 border:
                   wordSet.wordRandom == '顺序' ? `1px solid ${color}` : '',
               }"
             >
               <u-radio-group
-                  v-model="wordSet.wordRandom"
-                  iconSize="15px"
-                  size="15px"
-                  :activeColor="color"
-                  iconPlacement="right"
-                  placement="column"
+                v-model="wordSet.wordRandom"
+                iconSize="15px"
+                size="15px"
+                :activeColor="color"
+                iconPlacement="right"
+                placement="column"
               >
                 <u-radio
-                    label="顺序"
-                    name="顺序"
-                    :labelSize="labelSize"
+                  label="顺序"
+                  name="顺序"
+                  :labelSize="labelSize"
                 ></u-radio>
               </u-radio-group>
             </view>
             <view
-                style="
+              style="
                 margin-top: 10px;
                 background: #fff;
                 padding: 5px;
                 border-radius: 5px;
               "
-                :style="{
+              :style="{
                 border:
                   wordSet.wordRandom == '随机' ? `1px solid ${color}` : '',
               }"
             >
               <u-radio-group
-                  v-model="wordSet.wordRandom"
-                  iconSize="15px"
-                  size="15px"
-                  :activeColor="color"
-                  iconPlacement="right"
-                  placement="column"
+                v-model="wordSet.wordRandom"
+                iconSize="15px"
+                size="15px"
+                :activeColor="color"
+                iconPlacement="right"
+                placement="column"
               >
                 <u-radio
-                    style="margin-top: 20px"
-                    label="随机"
-                    name="随机"
-                    :labelSize="labelSize"
+                  style="margin-top: 20px"
+                  label="随机"
+                  name="随机"
+                  :labelSize="labelSize"
                 ></u-radio> </u-radio-group
-              ></view>
+            ></view>
           </view>
 
           <view style="margin-top: 30px" v-if="isWrite">
@@ -253,65 +265,65 @@
             </view>
 
             <view
-                style="
+              style="
                 background: #fff;
                 margin-top: 5px;
                 padding: 5px;
                 border-radius: 5px;
                 line-height: 40px;
               "
-                :style="{
+              :style="{
                 border:
                   wordSet.wordDir == '中文→英文' ? `1px solid ${color}` : '',
               }"
             >
               <u-radio-group
-                  v-model="wordSet.wordDir"
-                  iconSize="15px"
-                  size="15px"
-                  :activeColor="color"
-                  iconPlacement="right"
-                  placement="column"
+                v-model="wordSet.wordDir"
+                iconSize="15px"
+                size="15px"
+                :activeColor="color"
+                iconPlacement="right"
+                placement="column"
               >
                 <u-radio
-                    label="中文→英文"
-                    name="中文→英文"
-                    :labelSize="labelSize"
+                  label="中文→英文"
+                  name="中文→英文"
+                  :labelSize="labelSize"
                 ></u-radio>
               </u-radio-group>
             </view>
             <view
-                style="
+              style="
                 margin-top: 10px;
                 background: #fff;
                 padding: 5px;
                 border-radius: 5px;
               "
-                :style="{
+              :style="{
                 border:
                   wordSet.wordDir == '英文→中文' ? `1px solid ${color}` : '',
               }"
             >
               <u-radio-group
-                  v-model="wordSet.wordDir"
-                  iconSize="15px"
-                  size="15px"
-                  :activeColor="color"
-                  iconPlacement="right"
-                  placement="column"
+                v-model="wordSet.wordDir"
+                iconSize="15px"
+                size="15px"
+                :activeColor="color"
+                iconPlacement="right"
+                placement="column"
               >
                 <u-radio
-                    style="margin-top: 20px"
-                    label="英文→中文"
-                    name="英文→中文"
-                    :labelSize="labelSize"
+                  style="margin-top: 20px"
+                  label="英文→中文"
+                  name="英文→中文"
+                  :labelSize="labelSize"
                 ></u-radio> </u-radio-group
-              ></view>
+            ></view>
           </view>
 
           <view style="margin-top: 10px; background: #fff">
             <u-button type="primary" @click="doGotoWordDetails" shape="circle"
-            >设置好了</u-button
+              >设置好了</u-button
             >
           </view>
         </view>
@@ -321,11 +333,14 @@
 </template>
 <script>
 import { common_http, theme_color } from "../common/common.js";
+import { request } from '../common/request';
 
 export default {
   setup() {},
   data() {
     return {
+	favoriteWords: new Set(), // 使用Set存储已收藏的word_id
+
       show: false,
       wordSet: { wordRandom: "顺序", num: 0, wordDir: "中文→英文" },
       color: "",
@@ -340,15 +355,15 @@ export default {
       keyword: "",
       user: "",
       fixedTypeList: [
-        {name: "基础篇", value: 0},
-        {name: "核心篇", value: 1},
-        {name: "进阶篇", value: 2},
+        { name: "基础篇", value: 0 },
+        { name: "核心篇", value: 1 },
+        { name: "进阶篇", value: 2 },
       ],
       type2: 0,
       isNote: 0,
       noteInfo: "",
       wordInfo: "",
-      page: {startPage: 1, pageSize: 10},
+      page: { startPage: 1, pageSize: 10 },
     };
   },
   onLoad() {
@@ -364,10 +379,10 @@ export default {
     // });
     // this.getNextPage();
   },
-
   /**
    * 页面下拉触底事件的处理函数
    */
+  
   onReachBottom() {
     this.page.startPage += 1;
     //  在当前页面显示导航条加载动画, 是一个状态遮罩;
@@ -400,7 +415,53 @@ export default {
         wx.stopPullDownRefresh();
       }
     },
-    getData() {
+	// 获取收藏状态
+	    async loadFavoriteStatus() {
+	      try {
+	        const res = await request({
+	          url: '/words/favor',
+	          method: 'GET',
+	          needAuth: true
+	        });
+	        
+	        if (res.code === 1) {
+	          this.favoriteWords = new Set(res.extra.map(w => w.word_id));
+	          this.updateCollectionStatus();
+	        }
+	      } catch (error) {
+	        console.error('获取收藏状态失败:', error);
+	      }
+	    },
+	  async toggleCollect(word) {
+	    try {
+	      const action = word.isCollected ? 'cancelCollect' : 'addCollect';
+	      const res = await request({
+	        url: `/words/favor/${action}`,
+	        method: 'POST',
+	        data: {
+	          word_id: word.word_id,
+	          word_name: word.word_name
+	        },
+	        needAuth: true
+	      });
+	
+	      if (res.code === 1) {
+	        // 更新本地状态
+	        word.isCollected = !word.isCollected;
+	        this.$forceUpdate();
+	        
+	        wx.showToast({
+	          title: word.isCollected ? '已收藏' : '已取消',
+	          icon: 'none'
+	        });
+	      }
+	    } catch (error) {
+	      console.error('操作失败:', error);
+	      wx.showToast({ title: '操作失败', icon: 'none' });
+	    }
+	  },
+
+    async getData() {
       if (this.isNote && this.isNote == 1) {
         this.noteInfo = JSON.parse(wx.getStorageSync("noteInfo"));
         this.getCollectWords(this.noteInfo.type);
@@ -410,9 +471,86 @@ export default {
       } else {
         this.wordInfo = JSON.parse(wx.getStorageSync("wordInfo"));
         this.getWords();
+		await this.loadFavoriteStatus();
+
       }
     },
-
+	playShenyin(wordName){
+		const innerAudioContext = wx.createInnerAudioContext();
+		innerAudioContext.src = `http://dict.youdao.com/dictvoice?audio=${wordName}`;
+		innerAudioContext.play();
+	},
+	// 获取收藏状态
+    async loadFavoriteStatus() {
+      try {
+        const res = await request({
+          url: '/words/favor',
+          method: 'GET',
+          needAuth: true
+        });
+        
+        if (res.code === 1) {
+          this.favoriteWords = new Set(res.extra.map(w => w.word_id));
+          this.updateCollectionStatus();
+        }
+      } catch (error) {
+        console.error('获取收藏状态失败:', error);
+      }
+    },
+	    // 更新列表项的收藏状态
+    updateCollectionStatus() {
+      this.showDataList = this.showDataList.map(item => ({
+        ...item,
+        isCollected: this.favoriteWords.has(item.word_id)
+      }));
+    },
+	// 收藏/取消收藏操作
+	    async toggleCollect(word) {
+	      try {
+	        const isCollecting = !word.isCollected;
+	        const action = isCollecting ? 'add' : 'remove';
+	        
+	        // 立即更新UI状态
+	        word.isCollected = isCollecting;
+	        this.$forceUpdate();
+	
+	        // 执行网络请求
+	        const res = await request({
+	          url: `/words/favor${!isCollecting ? '' : ''}`, // 根据实际API调整
+	          method: isCollecting ? 'POST' : 'DELETE',
+	          data: { 
+	            word_id: word.word_id,
+	            word_name: word.word_name
+	          },
+	          needAuth: true
+	        });
+	
+	        if (res.code !== 1) {
+	          // 操作失败时回滚状态
+	          word.isCollected = !isCollecting;
+	          this.$forceUpdate();
+	          throw new Error(res.msg || '操作失败');
+	        }
+	
+	        // 更新本地收藏集合
+	        if (isCollecting) {
+	          this.favoriteWords.add(word.word_id);
+	        } else {
+	          this.favoriteWords.delete(word.word_id);
+	        }
+	
+	        wx.showToast({
+	          title: isCollecting ? '已加入收藏' : '已取消收藏',
+	          icon: 'none'
+	        });
+	      } catch (error) {
+	        console.error('收藏操作失败:', error);
+	        wx.showToast({
+	          title: error.message || '操作失败',
+	          icon: 'none'
+	        });
+	      }
+	    },
     cancelCollectWords(wordName, index) {
       let http = common_http + "/cancelCollectWords";
       let params = {};
@@ -447,40 +585,41 @@ export default {
       this.sourceDataList = dataList;
       //默认只显示前10个，否则太卡
       let size =
-          dataList.length > this.page.pageSize
-              ? this.page.pageSize
-              : dataList.length;
+        dataList.length > this.page.pageSize
+          ? this.page.pageSize
+          : dataList.length;
       for (let i = 0; i < size; i++) {
         this.showDataList.push(this.sourceDataList[i]);
       }
       this.dataList = this.showDataList;
       this.getWordSet();
     },
-    doGetWords(type2) {
+    async doGetWords(type2) {
       this.type2 = type2;
       this.getWords();
+	  await this.loadFavoriteStatus();
     },
 
-    getWords() {
-      let http = `${common_http}/words/collect?type=${this.type2}`;
-
-      wx.showLoading({title: "加载中"});
-      wx.request({
-        method: "GET",  // 改为 GET
-        url: http,
-        success: (res) => {
-          if (res.data.code === 1) { // 注意 code=1 表示成功
-            this.initWords(res.data.extra);
-            wx.setStorageSync("totalwordList", JSON.stringify(res.data.extra));
-          }
-        },
-        fail: (err) => {
-          wx.showToast({title: "请求失败", icon: "none"});
-        },
-        complete: () => {
-          wx.hideLoading();
+    async getWords() {
+      try {
+        wx.showLoading({ title: "加载中" });
+        
+        const res = await request({
+          url: `/words/collect?type=${this.type2}`,
+          needAuth: true
+        });
+    
+        if (res.code === 1) {
+          this.initWords(res.extra);
+          wx.setStorageSync("totalwordList", JSON.stringify(res.extra));
+        } else {
+          wx.showToast({ title: res.msg || '请求失败', icon: 'none' });
         }
-      });
+      } catch (err) {
+        console.error('获取单词失败:', err);
+      } finally {
+        wx.hideLoading();
+      }
     },
 
     getWordSet() {
@@ -498,7 +637,7 @@ export default {
     gotoWordDetails() {
       this.show = true;
       this.wordSet.num =
-          this.sourceDataList.length > 20 ? 20 : this.sourceDataList.length;
+        this.sourceDataList.length > 20 ? 20 : this.sourceDataList.length;
       this.isWrite = true;
     },
     search() {
@@ -545,7 +684,7 @@ export default {
         });
       }
     },
-
+	
     getCollectWords(type) {
       let http = common_http + "/words/getCollectWords";
       let params = {};
@@ -580,7 +719,6 @@ export default {
 .word-sheng:active {
   transform: scale(2); /* 缩放图片 */
 }
-
 .word-set {
   height: 400px;
   padding: 20px;

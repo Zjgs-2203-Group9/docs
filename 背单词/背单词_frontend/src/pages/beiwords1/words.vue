@@ -236,15 +236,21 @@
             </u-button></u-col
           >
           <u-col :span="6">
-            <u-button
-              type="success"
-              size="meduim"
-              icon="edit-pen"
-              @click="showCollect"
-              shape="circle"
-            >
-              记到单词本上
-            </u-button>
+              <u-button
+                type="success"
+                size="medium"
+                icon="edit-pen"
+                @click="toggleCollect"
+                shape="circle"
+                :customStyle="{
+                  background: isCollected ? '#f56c6c' : '#34b233',
+                  color: '#fff',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                }"
+              >
+                {{ isCollected ? '从单词本移除' : '记到单词本上' }}
+              </u-button>
           </u-col>
         </u-row>
       </view>
@@ -395,86 +401,18 @@
         ></view>
       </div>
     </view>
-
-    <u-popup
-      :show="show"
-      @close="show = false"
-      @open="show = true"
-      mode="bottom"
-    >
-      <view style="background: #f8f8f8; border-radius: 20px">
-        <view
-          v-for="(i, index) in wordNoteList"
-          :key="index"
-          style="margin: 10px 0 10px 0; background: #ffff; border-radius: 5px"
-        >
-          <u-row>
-            <u-col :span="9">
-              <view style="padding: 10px 0 5px 20px">
-                <view>
-                  <text style="font-size: 18px; font-weight: bold">
-                    {{ i.name }}
-                  </text>
-                </view>
-
-                <view style="margin-top: 5x"
-                  ><text style="font-size: 12px; color: #ababab"
-                    >共{{ i.total }}个</text
-                  ></view
-                ></view
-              >
-            </u-col>
-            <u-col :span="3">
-              <view
-                style="
-                  background: #e1f5f4;
-                  text-align: center;
-                  padding: 0 !important;
-                  margin: auto;
-                  height: 65px;
-                "
-              >
-                <view
-                  v-if="isCollect[i.type] != 0"
-                  @click="cancelCollectWords(i.type)"
-                >
-                  <img
-                    style="width: 25px; height: 25px; padding-top: 8px"
-                    src="https://itlifetime.com/resources/xiaochengxu/喜爱.png"
-                  />
-                  <view>
-                    <text style="font-size: 13px; color: #ababab">
-                      移除该单词
-                    </text>
-                  </view>
-                </view>
-
-                <view v-else @click="collectWords(i.type)">
-                  <img
-                    style="width: 25px; height: 25px; padding-top: 8px"
-                    src="https://itlifetime.com/resources/xiaochengxu/爱心.png"
-                  />
-                  <view>
-                    <text style="font-size: 13px; color: #ababab">
-                      记录下来
-                    </text>
-                  </view>
-                </view>
-              </view>
-            </u-col>
-          </u-row>
-        </view></view
-      >
-    </u-popup>
   </view>
 </template>
 <script>
 import { common_http, theme_color } from "../common/common.js";
-
+import { request } from "../common/request.js";
 export default {
   setup() {},
   data() {
     return {
+	isCollected: false,
+	currentWordId: null, // 新增存储当前单词ID
+      showKeyBoard: false,  // 初始化 showKeyBoard
       show: false,
       wordNoteList: [],
       answer: "",
@@ -563,6 +501,11 @@ export default {
   },
   onLoad() {
     this.getInit();
+    // 新增初始化检查
+    if(this.dataList.length > 0){
+      this.currentWordId = this.dataList[0].word_id;
+      this.checkCollectStatus();
+    }
   },
 
   onShow() {
@@ -630,6 +573,51 @@ export default {
     keypress(e) {
       console.log(e.keycode);
     },
+// 简化后的收藏方法
+    async toggleCollect() {
+      if (!this.currentWordId) return;
+      
+      try {
+        if (this.isCollected) {
+          await request({
+            url: "/words/favor",
+            method: "DELETE",
+            data: { word_id: this.currentWordId },
+            needAuth: true
+          });
+        } else {
+          await request({
+            url: "/words/favor",
+            method: "POST",
+            data: { word_id: this.currentWordId },
+            needAuth: true
+          });
+        }
+        this.isCollected = !this.isCollected;
+        uni.showToast({
+          title: this.isCollected ? '添加成功' : '移除成功',
+          icon: 'none'
+        });
+      } catch (error) {
+        console.error('操作失败:', error);
+      }
+    },
+	// 修改后的检查收藏状态方法
+    async checkCollectStatus() {
+      try {
+        const res = await request({
+          url: "/words/favor/status",
+          method: "GET",
+          data: { // 改为params参数
+            word_id: this.currentWordId
+          },
+          needAuth: true
+        });
+        this.isCollected = res.extra;
+      } catch (error) {
+        console.error('获取状态失败:', error);
+      }
+    },
     reback() {
       this.finishIndex = [];
       this.isOver = false;
@@ -694,6 +682,8 @@ export default {
     },
     showCollect() {
       this.show = true;
+	    this.currentWordId = this.dataList[this.index].word_id; // 获取当前单词ID
+
       let http = common_http + "/checkWordIsNote";
       let params = {};
       params.ephemeralParam = this.user.id;
@@ -725,6 +715,8 @@ export default {
     },
     //显示正确单词
     showWord() {
+		this.currentWordId = this.dataList[this.index].word_id;
+		this.checkCollectStatus();
       this.timeFinish();
     },
     //移除掉一个key
@@ -845,6 +837,8 @@ export default {
     },
 
     setNextWord() {
+	this.currentWordId = this.dataList[this.index].word_id; // 新增
+	this.checkCollectStatus(); // 新增
       this.$refs.myCountdown.reset();
       const arr = Array.from(this.dataList[this.index].word_name);
       this.wordArrays = [];
