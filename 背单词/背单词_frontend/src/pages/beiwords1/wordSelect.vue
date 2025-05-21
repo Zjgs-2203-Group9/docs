@@ -463,7 +463,11 @@ export default {
         },
       });
     },
-
+	playShenyin(wordName){
+		const innerAudioContext = wx.createInnerAudioContext();
+		innerAudioContext.src = `http://dict.youdao.com/dictvoice?audio=${wordName}`;
+		innerAudioContext.play();
+	},
     timeFinish() {
       this.user_answer = "xx";
       const arr = Array.from(this.dataList[this.index].word_name);

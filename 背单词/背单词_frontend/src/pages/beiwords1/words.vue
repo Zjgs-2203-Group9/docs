@@ -680,6 +680,11 @@ export default {
         });
       }
     },
+	playShenyin(wordName){
+		const innerAudioContext = wx.createInnerAudioContext();
+		innerAudioContext.src = `http://dict.youdao.com/dictvoice?audio=${wordName}`;
+		innerAudioContext.play();
+	},
     showCollect() {
       this.show = true;
 	    this.currentWordId = this.dataList[this.index].word_id; // 获取当前单词ID

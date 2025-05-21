@@ -432,47 +432,69 @@ export default {
 	        console.error('获取收藏状态失败:', error);
 	      }
 	    },
-	  async toggleCollect(word) {
-	    try {
-	      const action = word.isCollected ? 'cancelCollect' : 'addCollect';
-	      const res = await request({
-	        url: `/words/favor/${action}`,
-	        method: 'POST',
-	        data: {
-	          word_id: word.word_id,
-	          word_name: word.word_name
-	        },
-	        needAuth: true
-	      });
+	async toggleCollect(word) {
+	  try {
+	    const wasCollected = word.isCollected;
+	    
+	    // 立即更新UI状态
+	    word.isCollected = !wasCollected;
+	    this.updateAllCollectionStatus(word.word_id, !wasCollected);
+	    
+	    // 发送请求
+	    const res = await request({
+	      url: `/words/favor/${wasCollected ? 'cancelCollect' : 'addCollect'}`,
+	      method: 'POST',
+	      data: {
+	        word_id: word.word_id,
+	        word_name: word.word_name
+	      },
+	      needAuth: true
+	    });
 	
-	      if (res.code === 1) {
-	        // 更新本地状态
-	        word.isCollected = !word.isCollected;
-	        this.$forceUpdate();
-	        
-	        wx.showToast({
-	          title: word.isCollected ? '已收藏' : '已取消',
-	          icon: 'none'
-	        });
-	      }
-	    } catch (error) {
-	      console.error('操作失败:', error);
-	      wx.showToast({ title: '操作失败', icon: 'none' });
+	    // 失败回滚
+	    if (res.code !== 1) {
+	      word.isCollected = wasCollected;
+	      this.updateAllCollectionStatus(word.word_id, wasCollected);
+	      throw new Error(res.msg || '操作失败');
 	    }
-	  },
+	
+	    // 更新本地缓存
+	    if (wasCollected) {
+	      this.favoriteWords.delete(word.word_id);
+	    } else {
+	      this.favoriteWords.add(word.word_id);
+	    }
+	  } catch (error) {
+	    console.error('收藏操作失败:', error);
+	    wx.showToast({ title: error.message || '操作失败', icon: 'none' });
+	  }
+	},
+	updateAllCollectionStatus(wordId, isCollected) {
+	  this.sourceDataList = this.sourceDataList.map(item => 
+	    item.word_id === wordId ? {...item, isCollected} : item
+	  );
+	  
+	  this.showDataList = this.showDataList.map(item => 
+	    item.word_id === wordId ? {...item, isCollected} : item
+	  );
+	},
 
     async getData() {
-      if (this.isNote && this.isNote == 1) {
-        this.noteInfo = JSON.parse(wx.getStorageSync("noteInfo"));
-        this.getCollectWords(this.noteInfo.type);
-      } else if (this.isNote && this.isNote == 2) {
-        let totalwordList = JSON.parse(wx.getStorageSync("totalwordList"));
-        this.initWords(totalwordList);
-      } else {
-        this.wordInfo = JSON.parse(wx.getStorageSync("wordInfo"));
-        this.getWords();
-		await this.loadFavoriteStatus();
-
+      try {
+        if (this.isNote == 1) {
+          this.noteInfo = JSON.parse(wx.getStorageSync("noteInfo"));
+          await this.getCollectWords(this.noteInfo.type);
+        } else if (this.isNote == 2) {
+          const totalwordList = JSON.parse(wx.getStorageSync("totalwordList"));
+          await this.loadFavoriteStatus(); // 先加载收藏状态
+          this.initWords(totalwordList);
+        } else {
+          this.wordInfo = JSON.parse(wx.getStorageSync("wordInfo"));
+          await this.getWords(); 
+          await this.loadFavoriteStatus(); // 确保收藏状态加载完成
+        }
+      } catch (error) {
+        console.error('初始化失败:', error);
       }
     },
 	playShenyin(wordName){
@@ -579,27 +601,38 @@ export default {
         },
       });
     },
-    initWords(dataList) {
-      //要显示的单词，不能显示太多
+    initWords(data) {
+      // 合并收藏状态到数据
+      this.sourceDataList = data.map(item => ({
+        ...item,
+        isCollected: this.favoriteWords.has(item.word_id)
+      }));
+      
+      // 分页逻辑保持不变
       this.showDataList = [];
-      this.sourceDataList = dataList;
-      //默认只显示前10个，否则太卡
-      let size =
-        dataList.length > this.page.pageSize
-          ? this.page.pageSize
-          : dataList.length;
+      let size = Math.min(data.length, this.page.pageSize);
       for (let i = 0; i < size; i++) {
         this.showDataList.push(this.sourceDataList[i]);
       }
       this.dataList = this.showDataList;
-      this.getWordSet();
     },
+    // 修改doGetWords方法
     async doGetWords(type2) {
-      this.type2 = type2;
-      this.getWords();
-	  await this.loadFavoriteStatus();
+      try {
+        this.type2 = type2;
+        wx.showLoading({ title: '加载中' });
+        this.favoriteWords.clear();
+        // 并行请求数据和收藏状态
+        const [wordsData] = await Promise.all([
+          this.getWords(), // 你的Redis数据获取方法
+          this.loadFavoriteStatus()
+        ]);
+        
+        this.initWords(wordsData);
+      } finally {
+        wx.hideLoading();
+      }
     },
-
     async getWords() {
       try {
         wx.showLoading({ title: "加载中" });

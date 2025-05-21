@@ -6,9 +6,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.word_learn.dto.TranslateResponse;
 import com.word_learn.service.TranslateService;
 import com.word_learn.utils.Result;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+@Tag(name="翻译接口")
 @RestController
 @RequestMapping("/api/translate")
 public class TranslateController {
@@ -16,6 +17,7 @@ public class TranslateController {
     TranslateService translateService;
     @Autowired
     ObjectMapper objectMapper;
+    @Tag(name="AI翻译接口")
     @PostMapping("")
     public Result<TranslateResponse> translate(@RequestBody String text){
         String json = translateService.translateText(text);
