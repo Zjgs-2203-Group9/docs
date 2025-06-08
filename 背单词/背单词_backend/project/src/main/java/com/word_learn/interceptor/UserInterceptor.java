@@ -2,6 +2,7 @@ package com.word_learn.interceptor;
 
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.word_learn.exceptionHandler.exceptions.BaseException;
 import com.word_learn.utils.BaseContext;
 import com.word_learn.utils.JwtUtil;
 import jakarta.servlet.http.HttpServletRequest;
@@ -27,9 +28,8 @@ public class UserInterceptor implements HandlerInterceptor {
             log.info("userId:" + userId);
             return true;
         }catch(Exception ex){
-            System.out.println(ex.getMessage());
             response.setStatus(401);
-            return false;
+            throw new BaseException("登录失败，未验证！");
         }
     }
 }

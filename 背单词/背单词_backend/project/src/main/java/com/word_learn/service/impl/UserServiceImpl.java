@@ -10,6 +10,7 @@ import com.word_learn.exceptionHandler.exceptions.UserException;
 import com.word_learn.mapper.UserMapper;
 
 import com.word_learn.service.UserService;
+import com.word_learn.utils.PasswordUtils;
 import org.apache.catalina.realm.UserDatabaseRealm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,9 +53,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse login(String username, String password) {
         // 查找用户
-
         User user = userMapper.findByUsername(username);
-        if (user != null && user.getPassword().equals(encryptPassword(password))) {
+        if (user != null && PasswordUtils.checkPassword(password,user.getPassword())) {
             String token = JWT.create().withClaim("userId", user.getId())
                     .withClaim("userName", user.getUsername())
                     .withExpiresAt(Instant.now().plusSeconds(3600))
@@ -69,11 +69,9 @@ public class UserServiceImpl implements UserService {
     }
 
     private String encryptPassword(String password) {
-        password = DigestUtils.md5DigestAsHex(password.getBytes());
-
-        System.out.println(password);
-        // 这里可以用更安全的加密方式
-        return password;  // 简单的明文密码，实际开发中应使用哈希算法
+        //password = DigestUtils.md5DigestAsHex(password.getBytes());
+        password = PasswordUtils.hashPassword(password);//使用更厉害的加密算法
+        return password;
     }
 }
 

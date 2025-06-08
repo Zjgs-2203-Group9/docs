@@ -11,12 +11,14 @@ public class WebConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:8080") // 允许前端域名
+                // 使用allowedOriginPatterns替换allowedOrigins
+                .allowedOriginPatterns("*")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*")
-                .allowCredentials(true)
+                .allowCredentials(true) // 保持凭据开启
                 .maxAge(3600);
     }
+
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

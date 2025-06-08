@@ -71,9 +71,10 @@ public class WordController {
 //    }
     @Operation(summary = "获取分数接口")
     @GetMapping("/scores/{userId}")
-    public ResponseEntity<List<Score>> getUserScores(@PathVariable Long userId) {
+    public Result<List<Score>> getUserScores(@PathVariable Long userId) {
         List<Score> scores = scoreService.getScoresForUser(userId);
-        return new ResponseEntity<>(scores, HttpStatus.OK);
+        return Result.success(scores);
+
     }
 
 }
